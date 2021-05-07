@@ -27,13 +27,24 @@ const Board = ({ rows, cols }) => {
   const changeColorHandler = (selectedRowId, selectedColId) => {
     let copyOfBoard = [...board];
     copyOfBoard[selectedRowId][selectedColId]["color"] = randomColorGenerator();
-    let adjacentRowId = getAdjacentRowId(selectedRowId);
-    copyOfBoard[adjacentRowId][selectedColId]["color"] = randomColorGenerator();
+
+    // randomly choosing adjacent element
+    if (Math.random() * 10 > 5) {
+      let adjacentRowId = getAdjacentId(selectedRowId, rows);
+      copyOfBoard[adjacentRowId][selectedColId][
+        "color"
+      ] = randomColorGenerator();
+    } else {
+      let adjacentColId = getAdjacentId(selectedColId, cols);
+      copyOfBoard[selectedRowId][adjacentColId][
+        "color"
+      ] = randomColorGenerator();
+    }
     setBoard(copyOfBoard);
   };
 
-  const getAdjacentRowId = (selectedRowId) =>
-    selectedRowId === rows - 1 ? selectedRowId - 1 : selectedRowId + 1;
+  const getAdjacentId = (selectedId, rowOrColsNumber) =>
+    selectedId === rowOrColsNumber - 1 ? selectedId - 1 : selectedId + 1;
 
   if (isLoading)
     return (
