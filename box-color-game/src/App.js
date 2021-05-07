@@ -1,8 +1,14 @@
 import React from "react";
+
+import Home from "../src/pages/Home/Home";
 import "./App.css";
 
-function App() {
-  return <div className="App"></div>;
-}
+export const App = () => {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
+};
 
-export default App;
+export default Home;
