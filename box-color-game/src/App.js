@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Home from "../src/pages/Home/Home";
 import Board from "../src/components/Board/Board";
 import BoardConfiguration from "../src/components/BoardConfiguration/BoardConfiguration";
 import { AVAILABLE_SCREENS } from "../src/constants/constants";
