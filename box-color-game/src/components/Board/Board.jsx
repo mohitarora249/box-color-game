@@ -35,7 +35,12 @@ const Board = ({ rows, cols }) => {
   const getAdjacentRowId = (selectedRowId) =>
     selectedRowId === rows - 1 ? selectedRowId - 1 : selectedRowId + 1;
 
-  if (isLoading) return <></>;
+  if (isLoading)
+    return (
+      <div className="center_loader">
+        <div className="loader" />
+      </div>
+    );
 
   return (
     <>
