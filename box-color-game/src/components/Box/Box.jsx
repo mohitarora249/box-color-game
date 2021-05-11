@@ -17,7 +17,7 @@ const Box = ({ rowId, colId, changeColorHandler, backgroundColor, cols }) => {
         border: "1px solid black",
       }}
       onClick={boxClickHandler}
-    ></div>
+    />
   );
 };
 

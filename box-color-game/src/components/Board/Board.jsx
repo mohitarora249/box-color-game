@@ -79,13 +79,3 @@ const Board = ({ rows, cols }) => {
 };
 
 export default Board;
-
-// {[...Array(rows).keys()].map((r) => {
-//     return (
-//       <div key={`row-key-${r}`} style={{ display: "flex" }}>
-//         {[...Array(cols).keys()].map((c) => {
-//           return <Box key={`col-key-${c}`} rowId={r} colId={c} />;
-//         })}
-//       </div>
-//     );
-//   })}
